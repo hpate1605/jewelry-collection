@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Henil's Collection · Maitre de Diamant</title>
+<title>Henil Hirenbhai Patel · Maitre de Diamant</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="Fine jewellery by Maitre de Diamant. In stock, made to order, or customized to your vision.">
-<meta property="og:title" content="Henil's Collection · Maitre de Diamant">
+<meta property="og:title" content="Henil Hirenbhai Patel · Maitre de Diamant">
 <meta property="og:description" content="Fine jewellery in stock, made to order, or customized to your vision.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hpate1605.github.io/jewelry-collection/">
@@ -66,16 +66,79 @@ main{padding:16px 16px 60px}
 .nav{display:flex;gap:8px;margin-top:20px}
 .nav button{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--chip);color:var(--ink);font-size:14px;cursor:pointer}
 .note{margin-top:16px;font-size:13px;color:var(--mute)}.note b{color:var(--gold)}
+html{scroll-behavior:smooth}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 16px;overflow:hidden;background:#0b0a09}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,#3a2c1a 0%,rgba(13,12,11,0) 70%)}
+.float{position:absolute;inset:0;pointer-events:none}
+.float img{position:absolute;width:150px;height:150px;object-fit:contain;border-radius:18px;background:#fff;opacity:.16;filter:saturate(1.1)}
+@media(max-width:700px){.float img{width:92px;height:92px;opacity:.13}.float img.d{display:none}}
+.hin{position:relative;z-index:1;max-width:760px}
+.hname{font:400 clamp(38px,8vw,72px)/1.05 Georgia,"Times New Roman",serif;margin:0 0 18px;letter-spacing:.5px}
+.tag{font:italic clamp(17px,2.6vw,22px)/1.4 Georgia,serif;margin:0 0 28px;color:var(--ink)}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:15px;letter-spacing:.4px}
+.btn.gold{background:var(--gold);color:#16120c;font-weight:600}
+.stats{display:flex;gap:34px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+.stats b{display:block;font:400 26px Georgia,serif;color:var(--ink)}.stats span{font-size:12px;color:var(--mute);letter-spacing:1.5px;text-transform:uppercase}
+.down{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:30px;text-decoration:none;z-index:1;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+.custom{padding:72px 16px;border-top:1px solid var(--line);background:linear-gradient(#11100e,#0d0c0b)}
+.cw{max-width:1100px;margin:0 auto;text-align:center}
+.h2{font:400 clamp(28px,4.5vw,40px)/1.15 Georgia,serif;margin:0 0 14px}
+.lead{color:var(--mute);max-width:680px;margin:0 auto 40px;font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;text-align:left}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.step i{font:italic 30px Georgia,serif;color:var(--gold)}
+.step h3{font:400 19px Georgia,serif;margin:8px 0 6px}.step p{margin:0;color:var(--mute);font-size:14px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:40px;text-align:left}
+@media(max-width:820px){.opts{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.opts{grid-template-columns:1fr}}
+.opts>div{background:var(--card);padding:18px 20px}.opts h4{margin:0 0 4px;color:var(--gold);font:600 12px/1.2 -apple-system,Helvetica,sans-serif;letter-spacing:1.6px;text-transform:uppercase}.opts p{margin:0;font-size:14.5px}
+header#collection{border-top:1px solid var(--line);padding-top:56px}
 footer{text-align:center;color:var(--mute);font-size:12px;padding:0 16px 34px}
 footer .brand{font-size:11px;letter-spacing:4px;margin:0 0 8px}
 </style>
 </head>
 <body>
-<header>
+<section class="hero">
+  <div class="glow"></div>
+  <div class="float" id="float"></div>
+  <div class="hin">
+    <div class="brand">Maitre de Diamant</div>
+    <h1 class="hname">Henil Hirenbhai Patel</h1>
+    <div class="rule"></div>
+    <p class="tag">Fine jewellery &mdash; ready to wear, or made just for you.</p>
+    <div class="cta"><a class="btn gold" href="#collection">Explore the Collection</a><a class="btn" href="#custom">Design Your Own</a></div>
+    <div class="stats"><div><b id="st1">7,600+</b><span>designs</span></div><div><b id="st2">1,300+</b><span>ready now</span></div><div><b>Custom</b><span>made to your vision</span></div></div>
+  </div>
+  <a class="down" href="#custom" aria-label="Scroll down">&#8964;</a>
+</section>
+<section class="custom" id="custom"><div class="cw">
+  <div class="brand">Bespoke</div>
+  <h2 class="h2">Customized jewellery, made to your vision</h2>
+  <p class="lead">Have something in mind? Share your idea &mdash; a sketch, a photo, or any piece from this collection &mdash; and we will make it for you, exactly the way you want it.</p>
+  <div class="steps">
+    <div class="step"><i>1</i><h3>Share your idea</h3><p>Send a picture, a sketch, or the style number of a piece you like.</p></div>
+    <div class="step"><i>2</i><h3>Choose every detail</h3><p>Metal, karat, colour, stones, size &mdash; we go through it together.</p></div>
+    <div class="step"><i>3</i><h3>We craft it</h3><p>Your piece is made by our jewellers, by hand, to your design.</p></div>
+    <div class="step"><i>4</i><h3>Made for you</h3><p>Finished, checked and ready &mdash; one of a kind, just like you.</p></div>
+  </div>
+  <div class="opts">
+    <div><h4>Metal</h4><p>14K or 18K gold &middot; yellow, white or rose</p></div>
+    <div><h4>Diamonds</h4><p>Natural or lab-grown, any shape and size</p></div>
+    <div><h4>Gemstones</h4><p>Emerald, ruby, sapphire, tanzanite, pearl &amp; more</p></div>
+    <div><h4>Your size</h4><p>Rings sized and chains made to your length</p></div>
+    <div><h4>Any style</h4><p>Engagement rings, bands, earrings, necklaces, bracelets, bangles, pendants, men&rsquo;s jewellery</p></div>
+    <div><h4>Love a design here?</h4><p>Any piece can be remade in another metal, colour or size</p></div>
+  </div>
+  <a class="btn gold" href="#collection">Explore the Collection</a>
+</div></section>
+<header id="collection">
   <div class="brand">Maitre de Diamant</div>
   <h1>Henil&rsquo;s Collection</h1>
   <div class="rule"></div>
-  <p class="sub">We can also make customized jewellery for you, according to your vision.</p>
   <p class="sub2">Pieces marked <b class="i">In stock</b> are ready now; everything else <b class="m">can be made</b> for you. Tap any piece for details and send me the style number you like.</p>
 </header>
 <div class="bar"><div class="wrap">
@@ -88,7 +151,7 @@ footer .brand{font-size:11px;letter-spacing:4px;margin:0 0 8px}
 <main class="wrap"><div class="grid" id="grid"></div><button id="more">Show more</button></main>
 <div class="lb" id="lb"><div class="box" id="box"></div></div><button class="x" id="x" aria-label="Close">×</button>
 <footer><div class="brand">Maitre de Diamant</div>Every piece can be made in yellow, white or rose gold and in your size &mdash; or designed new, just for you.</footer>
-<script src="data.js"></script>
+<script src="data.js?v=439faa1f"></script>
 <script>
 // D: [sku, desc, cat, colour, metal, origin, stone, ctw, gold_g, size, instock, year, img, created] in featured order
 const F={cat:'ALL',stock:'all',metal:'all',kind:'all',sort:'f'};let list=[],shown=0,cur=-1;const PAGE=60;
@@ -130,6 +193,9 @@ function close_(){$('lb').classList.remove('on');document.body.style.overflow=''
 $('x').onclick=close_;$('lb').onclick=e=>{if(e.target.id==='lb')close_()};
 document.onkeydown=e=>{if(!$('lb').classList.contains('on'))return;if(e.key==='Escape')close_();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)};
 run();
+(()=>{const f=$('float'),pos=[[4,10],[80,8],[10,62],[84,58],[46,78],[70,30],[22,30]];const pick=[0,1,2,4,5,6,9];
+ pos.forEach((p,k)=>{const d=D[pick[k]];if(!d)return;const im=new Image();im.src='t/'+d[12]+'.webp';im.alt='';im.style.left=p[0]+'%';im.style.top=p[1]+'%';if([2,3,5,6].includes(k))im.className='d';im.style.transform='rotate('+((k%2?1:-1)*(4+k))+'deg)';f.appendChild(im)});
+ const n=D.length,s=D.filter(d=>d[10]).length;$('st1').textContent=(Math.floor(n/100)*100).toLocaleString()+'+';$('st2').textContent=(Math.floor(s/100)*100).toLocaleString()+'+'})();
 </script>
 </body>
 </html>
