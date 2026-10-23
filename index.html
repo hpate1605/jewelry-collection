@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fine Jewelry Collection</title>
 <meta name="robots" content="noindex">
+<meta name="description" content="Fine jewelry designs, in stock and made to order. Tap any piece for photos and details.">
+<meta property="og:title" content="Fine Jewelry Collection">
+<meta property="og:description" content="Rings, earrings, necklaces, bracelets and more. In stock and made to order.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hpate1605.github.io/jewelry-collection/">
+<meta property="og:image" content="https://hpate1605.github.io/jewelry-collection/cover.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M8 4h16l6 8-14 17L2 12z' fill='%23a67c2e'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#faf8f5">
 <style>
 :root{--bg:#faf8f5;--card:#fff;--ink:#1f1b16;--mute:#7a7066;--line:#ece6de;--gold:#a67c2e;--ok:#2f7d4f;--made:#8a5a12;--chip:#f2ede6}
 *{box-sizing:border-box}
@@ -88,7 +98,7 @@ function run(){const ws=norm($('q').value).split(/\s+/).filter(Boolean);
   if(F.kind==='nat'&&d[5]!=='n')continue; if(F.kind==='lab'&&d[5]!=='l')continue; if(F.kind==='col'&&!d[6])continue; if(F.kind==='gold'&&(d[5]||d[6]))continue;
   if(ws.length){const h=norm(d[0]+' '+d[1]+' '+(CN[d[2]]||'')+' '+(d[6]||''));if(!ws.every(w=>h.includes(w)))continue}
   list.push(i)}
- $('count').textContent=list.length.toLocaleString()+' pieces';$('grid').innerHTML='';shown=0;more()}
+ $('count').textContent=list.length.toLocaleString()+(list.length===1?' piece':' pieces');$('grid').innerHTML='';shown=0;more()}
 function card(i){const d=D[i];return `<div class="card" data-i="${i}"><div class="ph"><img loading="lazy" src="t/${d[12]}.webp" alt=""></div><div class="tx"><div class="d">${esc(d[1])}</div><div class="s">${esc(d[0])}</div><span class="b ${d[10]?'in':'mo'}">${d[10]?'In stock':'Can be made'}</span></div></div>`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function more(){const n=list.slice(shown,shown+PAGE);$('grid').insertAdjacentHTML('beforeend',n.map(card).join(''));shown+=n.length;$('more').style.display=shown<list.length?'block':'none'}
