@@ -3,89 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fine Jewelry Collection</title>
+<title>Henil's Collection · Maitre de Diamant</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Fine jewelry designs, in stock and made to order. Tap any piece for photos and details.">
-<meta property="og:title" content="Fine Jewelry Collection">
-<meta property="og:description" content="Rings, earrings, necklaces, bracelets and more. In stock and made to order.">
+<meta name="description" content="Fine jewellery by Maitre de Diamant. In stock, made to order, or customized to your vision.">
+<meta property="og:title" content="Henil's Collection · Maitre de Diamant">
+<meta property="og:description" content="Fine jewellery in stock, made to order, or customized to your vision.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hpate1605.github.io/jewelry-collection/">
 <meta property="og:image" content="https://hpate1605.github.io/jewelry-collection/cover.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M8 4h16l6 8-14 17L2 12z' fill='%23a67c2e'/%3E%3C/svg%3E">
-<meta name="theme-color" content="#faf8f5">
+<meta name="theme-color" content="#0d0c0b">
 <style>
-:root{--bg:#faf8f5;--card:#fff;--ink:#1f1b16;--mute:#7a7066;--line:#ece6de;--gold:#a67c2e;--ok:#2f7d4f;--made:#8a5a12;--chip:#f2ede6}
+:root{--bg:#0d0c0b;--card:#171513;--ink:#efe8dc;--mute:#9b9082;--line:#2b2723;--gold:#cfa95f;--ok:#86d0a4;--made:#e0b96f;--chip:#1c1916;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
-header{padding:28px 16px 10px;text-align:center}
-h1{font:600 28px/1.15 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spacing:.3px}
-.sub{color:var(--mute);margin:0 auto;max-width:640px}
-.bar{position:sticky;top:0;z-index:5;background:rgba(250,248,245,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 16px}
+html,body{overflow-x:hidden}
+header{padding:40px 16px 18px;text-align:center;background:radial-gradient(ellipse at top,#2a2117 0%,var(--bg) 70%)}
+.brand{font:500 13px/1 Georgia,"Times New Roman",serif;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+h1{font:400 38px/1.1 Georgia,"Times New Roman",serif;margin:0 0 12px;letter-spacing:.5px}
+.rule{width:64px;height:1px;background:var(--gold);margin:0 auto 14px;opacity:.7}
+.sub{color:var(--ink);margin:0 auto 6px;max-width:620px;font:italic 17px/1.4 Georgia,serif}
+.sub2{color:var(--mute);margin:0 auto;max-width:620px;font-size:13.5px}
+.sub2 b.i{color:var(--ok)}.sub2 b.m{color:var(--made)}
+.bar{position:sticky;top:0;z-index:5;background:rgba(13,12,11,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 16px}
 .wrap{max-width:1280px;margin:0 auto}
-#q{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;background:#fff}
+#q{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;background:var(--chip);color:var(--ink);outline:none}
+#q:focus{border-color:var(--gold)}
+#q::placeholder{color:#7d7366}
 .chips{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.on{background:var(--gold);color:#16120c;border-color:var(--gold);font-weight:600}
 .count{color:var(--mute);font-size:13px;padding:8px 0 0}
-main{padding:14px 16px 60px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+main{padding:16px 16px 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
 @media(max-width:420px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
 .grid>*{min-width:0}
-html,body{overflow-x:hidden}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#5a4a33;transform:translateY(-2px)}
 .card .ph{aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center}
 .card img{width:100%;height:100%;object-fit:contain}
-.card .tx{padding:8px 10px 10px;display:flex;flex-direction:column;gap:3px}
+.card .tx{padding:9px 10px 11px;display:flex;flex-direction:column;gap:4px}
 .d{font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
-.s{font-size:11.5px;color:var(--mute);letter-spacing:.3px}
+.s{font-size:11.5px;color:var(--mute);letter-spacing:.4px}
 .b{font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;align-self:flex-start}
-.b.in{background:#e7f3ec;color:var(--ok)}.b.mo{background:#f7eedf;color:var(--made)}
-#more{display:block;margin:22px auto 0;padding:12px 22px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:15px;cursor:pointer}
-.lb{position:fixed;inset:0;background:rgba(20,16,12,.72);z-index:20;display:none;align-items:center;justify-content:center;padding:16px}
+.b.in{background:rgba(134,208,164,.13);color:var(--ok)}.b.mo{background:rgba(224,185,111,.13);color:var(--made)}
+#more{display:block;margin:24px auto 0;padding:12px 22px;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--ink);font-size:15px;cursor:pointer}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:20;display:none;align-items:center;justify-content:center;padding:16px}
 .lb.on{display:flex}
-.box{background:#fff;border-radius:14px;max-width:920px;width:100%;max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:1.2fr 1fr}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;max-width:940px;width:100%;max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:1.2fr 1fr}
 @media(max-width:720px){.box{grid-template-columns:1fr}}
 .box .big{background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
 .box .big img{width:100%;height:auto;max-height:70vh;object-fit:contain}
-.box .info{padding:22px 20px;border-left:1px solid var(--line)}
-.box h2{font:600 20px/1.3 Georgia,serif;margin:0 0 6px}
-.box dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 0;font-size:14px}
+.box .info{padding:24px 22px}
+.box h2{font:400 21px/1.3 Georgia,serif;margin:0 0 6px}
+.box dl{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;margin:16px 0 0;font-size:14px}
 .box dt{color:var(--mute)}.box dd{margin:0}
-.x{position:fixed;top:12px;right:14px;z-index:21;width:42px;height:42px;border-radius:50%;border:0;background:#fff;font-size:22px;cursor:pointer;display:none}
+.x{position:fixed;top:12px;right:14px;z-index:21;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:22px;cursor:pointer;display:none}
 .lb.on~.x{display:block}
-.nav{display:flex;gap:8px;margin-top:18px}
-.nav button{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px;cursor:pointer}
-.note{margin-top:14px;font-size:13px;color:var(--mute)}
-footer{text-align:center;color:var(--mute);font-size:12px;padding:0 16px 30px}
+.nav{display:flex;gap:8px;margin-top:20px}
+.nav button{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--chip);color:var(--ink);font-size:14px;cursor:pointer}
+.note{margin-top:16px;font-size:13px;color:var(--mute)}.note b{color:var(--gold)}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:0 16px 34px}
+footer .brand{font-size:11px;letter-spacing:4px;margin:0 0 8px}
 </style>
 </head>
 <body>
 <header>
-  <h1>Fine Jewelry Collection</h1>
-  <p class="sub">Every design we have made from 2020 to today, plus older favorites still available. Pieces marked <b style="color:var(--ok)">In stock</b> are ready now; everything else <b style="color:var(--made)">can be made</b> for you. Tap any piece for details and send me the style number you like.</p>
+  <div class="brand">Maitre de Diamant</div>
+  <h1>Henil&rsquo;s Collection</h1>
+  <div class="rule"></div>
+  <p class="sub">We can also make customized jewellery for you, according to your vision.</p>
+  <p class="sub2">Pieces marked <b class="i">In stock</b> are ready now; everything else <b class="m">can be made</b> for you. Tap any piece for details and send me the style number you like.</p>
 </header>
 <div class="bar"><div class="wrap">
   <input id="q" type="search" placeholder="Search: ring, emerald, tennis, LESG10A…" autocomplete="off">
   <div class="chips" id="cat"></div>
   <div class="chips" id="flt"></div>
+  <div class="chips" id="srt"></div>
   <div class="count" id="count"></div>
 </div></div>
 <main class="wrap"><div class="grid" id="grid"></div><button id="more">Show more</button></main>
 <div class="lb" id="lb"><div class="box" id="box"></div></div><button class="x" id="x" aria-label="Close">×</button>
-<footer>Photos are of actual designs; finished pieces can be made in yellow, white or rose gold and in your size.</footer>
+<footer><div class="brand">Maitre de Diamant</div>Every piece can be made in yellow, white or rose gold and in your size &mdash; or designed new, just for you.</footer>
 <script src="data.js"></script>
 <script>
-// D: [sku, desc, cat, colour, metal, origin, stone, ctw, gold_g, size, instock, year, img]
-const F={cat:'ALL',stock:'all',metal:'all',kind:'all'};let list=[],shown=0,cur=-1;const PAGE=60;
+// D: [sku, desc, cat, colour, metal, origin, stone, ctw, gold_g, size, instock, year, img, created] in featured order
+const F={cat:'ALL',stock:'all',metal:'all',kind:'all',sort:'f'};let list=[],shown=0,cur=-1;const PAGE=60;
 const CN={RINGS:'Rings',EARRINGS:'Earrings',NECKLACES:'Necklaces',BRACELETS:'Bracelets',BANGLES:'Bangles',CHARMS:'Pendants & Charms',ANKLETS:'Anklets',PINS:'Pins',CUFFLINKS:'Cufflinks','KEY CHAINS':'Key Chains',UNCATEGORIZED:'Other'};
 const MC={Y:'Yellow Gold',W:'White Gold',R:'Rose Gold',T:'Two-Tone'};
 const $=id=>document.getElementById(id);
 function chips(el,items,key){el.innerHTML=items.map(([v,l])=>`<button class="chip${F[key]===v?' on':''}" data-v="${v}">${l}</button>`).join('');el.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;F[key]=b.dataset.v;chips(el,items,key);run()}}
 const cats=[['ALL','All']].concat(Object.keys(CN).filter(c=>D.some(d=>d[2]===c)).map(c=>[c,CN[c]]));
 chips($('cat'),cats,'cat');
+chips($('srt'),[['f','Featured'],['n','Newest first'],['o','Oldest first']],'sort');
 const fl=$('flt');const FL=[['stock','all','Everything'],['stock','in','In stock'],['stock','mo','Made to order'],['kind','nat','Natural diamond'],['kind','lab','Lab grown'],['kind','col','Color stones'],['kind','gold','Plain gold'],['metal','Y','Yellow'],['metal','W','White'],['metal','R','Rose']];
 function drawFl(){fl.innerHTML=FL.map(([k,v,l],i)=>`<button class="chip${F[k]===v&&!(k!=='stock'&&v==='all')?' on':''}" data-i="${i}">${l}</button>`).join('')}
 fl.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;const [k,v]=FL[b.dataset.i];F[k]=(F[k]===v&&k!=='stock')?'all':v;drawFl();run()};drawFl();
@@ -98,6 +111,8 @@ function run(){const ws=norm($('q').value).split(/\s+/).filter(Boolean);
   if(F.kind==='nat'&&d[5]!=='n')continue; if(F.kind==='lab'&&d[5]!=='l')continue; if(F.kind==='col'&&!d[6])continue; if(F.kind==='gold'&&(d[5]||d[6]))continue;
   if(ws.length){const h=norm(d[0]+' '+d[1]+' '+(CN[d[2]]||'')+' '+(d[6]||''));if(!ws.every(w=>h.includes(w)))continue}
   list.push(i)}
+ if(F.sort==='n')list.sort((a,b)=>D[b][13]<D[a][13]?-1:D[b][13]>D[a][13]?1:a-b);
+ if(F.sort==='o')list.sort((a,b)=>D[a][13]<D[b][13]?-1:D[a][13]>D[b][13]?1:a-b);
  $('count').textContent=list.length.toLocaleString()+(list.length===1?' piece':' pieces');$('grid').innerHTML='';shown=0;more()}
 function card(i){const d=D[i];return `<div class="card" data-i="${i}"><div class="ph"><img loading="lazy" src="t/${d[12]}.webp" alt=""></div><div class="tx"><div class="d">${esc(d[1])}</div><div class="s">${esc(d[0])}</div><span class="b ${d[10]?'in':'mo'}">${d[10]?'In stock':'Can be made'}</span></div></div>`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -107,7 +122,7 @@ new IntersectionObserver(e=>{if(e[0].isIntersecting&&shown<list.length)more()},{
 let t;$('q').oninput=()=>{clearTimeout(t);t=setTimeout(run,150)};
 $('grid').onclick=e=>{const c=e.target.closest('.card');if(c)open_(+c.dataset.i)};
 function open_(i){cur=i;const d=D[i];const rows=[['Style #',d[0]],['Type',CN[d[2]]||d[2]],['Metal',(d[4]||'')+(d[3]&&MC[d[3]]&&!/gold/i.test(d[4]||'')?' '+MC[d[3]]:'')],['Diamonds',d[5]==='l'?'Lab grown':d[5]==='n'?'Natural':''],['Color stone',d[6]],['Total carat',d[7]?d[7]+' ct':''],['Gold weight',d[8]?d[8]+' g':''],['Size',d[9]],['Availability',d[10]?'In stock — ready now':'Can be made to order'],['Design year',d[11]]].filter(r=>r[1]);
- $('box').innerHTML=`<div class="big"><img src="l/${d[12]}.webp" alt=""></div><div class="info"><h2>${esc(d[1])}</h2><dl>${rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><p class="note">Want this or something like it? Send me the style number <b>${esc(d[0])}</b>.</p><div class="nav"><button id="pv">‹ Previous</button><button id="nx">Next ›</button></div></div>`;
+ $('box').innerHTML=`<div class="big"><img src="l/${d[12]}.webp" alt=""></div><div class="info"><h2>${esc(d[1])}</h2><dl>${rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><p class="note">Want this, or something like it made just for you? Send me the style number <b>${esc(d[0])}</b>.</p><div class="nav"><button id="pv">‹ Previous</button><button id="nx">Next ›</button></div></div>`;
  $('lb').classList.add('on');document.body.style.overflow='hidden';
  $('pv').onclick=()=>step(-1);$('nx').onclick=()=>step(1)}
 function step(k){const p=list.indexOf(cur)+k;if(p>=0&&p<list.length){if(p>=shown)more();open_(list[p])}}
