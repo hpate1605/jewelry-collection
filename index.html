@@ -151,7 +151,7 @@ footer .brand{font-size:11px;letter-spacing:4px;margin:0 0 8px}
 <main class="wrap"><div class="grid" id="grid"></div><button id="more">Show more</button></main>
 <div class="lb" id="lb"><div class="box" id="box"></div></div><button class="x" id="x" aria-label="Close">×</button>
 <footer><div class="brand">Maitre de Diamant</div>Every piece can be made in 14K, 18K, 22K or 24K Every piece can be made in yellow, white or rose gold and in your sizemdash; yellow, white or rose gold, in your size &mdash; or designed new, just for you.</footer>
-<script src="data.js?v=14a9fa9a"></script>
+<script src="data.js?v=d97f2635"></script>
 <script>
 // D: [sku, desc, cat, colour, metal, origin, stone, ctw, gold_g, size, instock, year, img, created] in featured order
 const F={cat:'ALL',stock:'all',metal:'all',kind:'all',sort:'f'};let list=[],shown=0,cur=-1;const PAGE=60;
@@ -177,15 +177,16 @@ function run(){const ws=norm($('q').value).split(/\s+/).filter(Boolean);
  if(F.sort==='n')list.sort((a,b)=>D[b][13]<D[a][13]?-1:D[b][13]>D[a][13]?1:a-b);
  if(F.sort==='o')list.sort((a,b)=>D[a][13]<D[b][13]?-1:D[a][13]>D[b][13]?1:a-b);
  $('count').textContent=list.length.toLocaleString()+(list.length===1?' piece':' pieces');$('grid').innerHTML='';shown=0;more()}
-function card(i){const d=D[i];return `<div class="card" data-i="${i}"><div class="ph"><img loading="lazy" src="t/${d[12]}.webp" alt=""></div><div class="tx"><div class="d">${esc(d[1])}</div><div class="s">${esc(d[0])}</div><span class="b ${d[10]?'in':'mo'}">${d[10]?'In stock':'Can be made'}</span></div></div>`}
+function nm(t){return t.replace(/[,(]?\s*(\d*\.?\d+\s*(ct|carat)s?\.?\s*(t\.?w\.?)?\s*(diamonds?|gemstones?)?\s*[,)]?\s*)+$/i,'').replace(/[,\s]+$/,'')||t}
+function card(i){const d=D[i];return `<div class="card" data-i="${i}"><div class="ph"><img loading="lazy" src="t/${d[12]}.webp" alt=""></div><div class="tx"><div class="d">${esc(nm(d[1]))}</div><div class="s">${esc(d[0])}</div><span class="b ${d[10]?'in':'mo'}">${d[10]?'In stock':'Can be made'}</span></div></div>`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function more(){const n=list.slice(shown,shown+PAGE);$('grid').insertAdjacentHTML('beforeend',n.map(card).join(''));shown+=n.length;$('more').style.display=shown<list.length?'block':'none'}
 $('more').onclick=more;
 new IntersectionObserver(e=>{if(e[0].isIntersecting&&shown<list.length)more()},{rootMargin:'800px'}).observe($('more'));
 let t;$('q').oninput=()=>{clearTimeout(t);t=setTimeout(run,150)};
 $('grid').onclick=e=>{const c=e.target.closest('.card');if(c)open_(+c.dataset.i)};
-function open_(i){cur=i;const d=D[i];const rows=[['Style #',d[0]],['Type',CN[d[2]]||d[2]],['Metal',(d[4]||'')+(d[3]&&MC[d[3]]&&!/gold/i.test(d[4]||'')?' '+MC[d[3]]:'')],['Diamonds',d[5]==='l'?'Lab grown':d[5]==='n'?'Natural':''],['Color stone',d[6]],['Total carat',d[7]?d[7]+' ct':''],['Gold weight',d[8]?d[8]+' g':''],['Size',d[9]],['Availability',d[10]?'In stock — ready now':'Can be made to order'],['Design year',d[11]]].filter(r=>r[1]);
- $('box').innerHTML=`<div class="big"><img src="l/${d[12]}.webp" alt=""></div><div class="info"><h2>${esc(d[1])}</h2><dl>${rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><p class="note">Want this, or something like it made just for you? Send me the style number <b>${esc(d[0])}</b>.</p><div class="nav"><button id="pv">‹ Previous</button><button id="nx">Next ›</button></div></div>`;
+function open_(i){cur=i;const d=D[i];const rows=[['Style #',d[0]],['Colour',MC[d[3]]||''],['Availability',d[10]?'In stock — ready now':'Can be made to order']].filter(r=>r[1]);
+ $('box').innerHTML=`<div class="big"><img src="l/${d[12]}.webp" alt=""></div><div class="info"><h2>${esc(nm(d[1]))}</h2><dl>${rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><p class="note">Want this, or something like it made just for you? Send me the style number <b>${esc(d[0])}</b>.</p><div class="nav"><button id="pv">‹ Previous</button><button id="nx">Next ›</button></div></div>`;
  $('lb').classList.add('on');document.body.style.overflow='hidden';
  $('pv').onclick=()=>step(-1);$('nx').onclick=()=>step(1)}
 function step(k){const p=list.indexOf(cur)+k;if(p>=0&&p<list.length){if(p>=shown)more();open_(list[p])}}
